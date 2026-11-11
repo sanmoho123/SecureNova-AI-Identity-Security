@@ -1,0 +1,67 @@
+# AI Identity Security – Incident Response Playbook
+
+## Scenario 1: Leaked LLM API Key
+
+**Incident:** An LLM API key is accidentally exposed in application logs or a public repository.
+
+### 1. Detection
+- Security monitoring detects an exposed API key.
+- Unexpected API requests or unusual usage may indicate misuse.
+- The security team receives an alert.
+
+### 2. Containment
+- Immediately revoke the exposed API key.
+- Generate a replacement key.
+- Disable affected integrations temporarily if necessary.
+- Restrict access to the affected system.
+
+### 3. Evidence Preservation
+- Save relevant application logs and timestamps.
+- Record the affected key identifier, not the secret value.
+- Preserve API usage records and suspicious request details.
+
+### 4. Notification
+- Inform the security team and system owner.
+- Notify affected stakeholders according to the incident policy.
+- Document the incident and actions taken.
+
+### 5. Recovery
+- Store the replacement key in a secure secrets manager.
+- Update authorized applications.
+- Test the integration.
+- Monitor activity for further suspicious requests.
+- Document lessons learned to prevent recurrence.
+
+## Scenario 2: Compromised AI Agent Identity
+
+### Detection
+Identify unexpected agent activity, unusual permissions or suspicious requests.
+
+### Containment
+Disable the affected agent identity and revoke its active credentials.
+
+### Evidence Preservation
+Preserve authentication logs, access records and relevant timestamps.
+
+### Notification
+Inform the security team and system owner.
+
+### Recovery
+Restore the agent with verified credentials and minimum required permissions.
+
+## Scenario 3: Successful Prompt Injection Leading to Data Exfiltration
+
+### Detection
+Identify suspicious prompts, unauthorized tool calls or unusual data access.
+
+### Containment
+Stop the affected agent session, block malicious requests and restrict access to sensitive data.
+
+### Evidence Preservation
+Preserve prompts, responses, tool-call logs and access records.
+
+### Notification
+Notify the security team and relevant stakeholders.
+
+### Recovery
+Remove malicious instructions, review access controls, test guardrails and safely restore service.
